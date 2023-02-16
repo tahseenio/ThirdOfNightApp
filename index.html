@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="themes.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>
+      Third of The Night - Calculate the last third of the night, tahajjud
+      calculator, qiyam al layl calculator.
+    </title>
+    <meta
+      name="description"
+      content="Calculate the last third of the night by entering the time for Maghrib and Fajr. One of the easiest ways if you want to pray tahajjud or qiyam al layl or want to make dua in the last third of the night. Calculate the Islamic midnight for those who believe that Isha prayer has to be prayed before midnight."
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="input">
+        <h2 class="maghribtext">Maghrib today</h2>
+        <input
+          class="maghribinput"
+          type="time"
+          id="maghrib"
+          name="maghrib"
+          required
+        />
+        <h2 class="fajrtext">Fajr tomorrow</h2>
+        <input class="fajrinput" type="time" id="fajr" name="fajr" required />
+        <input
+          class="calculate"
+          id="calculate"
+          type="button"
+          value="Calculate"
+        />
+      </div>
+      <div class="results" id="results">
+        <h2 class="thirdtext">Last ⅓ of night starts</h2>
+        <p class="third" id="third">0</p>
+        <h2 class="midnighttext">Midnight starts</h2>
+        <p class="midnight" id="midnight">0</p>
+        <button class="disclaimer" id="disclaimer">DISCLAIMER (MUST READ)</button>
+        </button>
+      </div>
+    </div>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>As-salamu alaykum 👋</h1>
+      <p>
+        The calculated times displayed above are accurate to the nearest minute. In your case, this means if you pray or make dua at least 1 minute after <span class="userthird"></span>, this means you have definitely prayed or made dua in the last third of the night. Click <a href="https://islamqa.info/en/answers/291824/the-virtue-of-offering-supplication-in-the-last-third-of-the-night">here</a> to understand why the last third of the night is a special time for Muslims. As for the midnight value given to you (<span class="usermidnight"></span>), this is for those who believe the ‘Isha prayer must be performed before midnight. This is also accurate to the nearest minute, so this could mean midnight is actually 1 minute earlier than the value given to you. I must remind you that the calculator depends on you giving accurate times for Maghrib and Fajr, so you must ensure they are correct. Report issues to me on <a href="https://instagram.com/proateen">Instagram</a>. The code for this site is on <a href="https://github.com/proateen">GitHub</a>.
+      </p>
+    </div>
+    <div class="overlay hidden">
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"
+      integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/calculator.js"></script>
+    <script type="module" src="/scraperHelper.js"></script>
+  </body>
+</html>
