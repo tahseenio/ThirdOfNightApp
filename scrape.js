@@ -27,6 +27,7 @@ const writeToFile = (fajr, magrib) => {
 (async () => {
   const url = 'https://themasjidapp.net/hpmosque';
 
+  console.log('Opened Browser');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setExtraHTTPHeaders({
@@ -34,6 +35,7 @@ const writeToFile = (fajr, magrib) => {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 Agency/97.8.6287.88',
   });
 
+  console.log('Going to Page');
   await page.goto(url, { waitUntil: 'domcontentloaded' });
 
   const [fajr, magrib] = await page.evaluate(() => {
@@ -51,6 +53,9 @@ const writeToFile = (fajr, magrib) => {
   await browser.close();
 
   writeToFile(fajr, magrib);
+  console.log('Wrote to File');
 
   startExpressServer();
+  console.log('Opening Express Server');
+  setTimeout(() => process.exit(1), 5000);
 })();
