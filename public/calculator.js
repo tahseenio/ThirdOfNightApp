@@ -33,10 +33,12 @@ let calculateTimes = () => {
     halfOfTheDifference = difference / 2;
     lastThirdOfTheNight = fajr
       .subtract(thirdOfTheDifference, 'milliseconds')
-      .format('HH:mm');
+      // .format('HH:mm');
+      .format('h:m:A');
     midnight = fajr
       .subtract(halfOfTheDifference, 'milliseconds')
-      .format('HH:mm');
+      // .format('HH:mm');
+      .format('h:m:A');
     lastThirdOfTheNightTimeStart.innerHTML = lastThirdOfTheNight;
     lastThirdOfTheNightTimeStart.style.visibility = 'visible';
     midnightStart.innerHTML = midnight;
